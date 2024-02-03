@@ -1,0 +1,19 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #52CC7A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    flex-direction: column;
+}
+
+#Lista {
+  width: 50%;
+  height: 100px;
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 10px;
+}
