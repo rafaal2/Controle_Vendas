@@ -43,7 +43,7 @@ ProductRepository repository;
         entity.setPrice(product.getPrice());
         entity.setQuantity(product.getQuantity());
         entity.setTimestamp(new Date());
-        return repository.save(product);
+        return repository.save(entity);
     }
     public void delete(Long code) {
 

@@ -1,9 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Controle de vendas</title>
@@ -14,23 +13,57 @@
 <div class="entradaDados">
     <h2>Test Test</h2>
     <form id="operation">
-        <label for="operation">escolha a operação:</label>
-        <select>
-            <option value="get"> Read </option>
-            <option value="post"> Create</option>
-            <option value="put"> Update </option>
-            <option value="delete"> Delete </option>
+        <label for="operation">Escolha a operação:</label>
+        <select id="operationSelect">
+            <option value="findAll">Read</option>
+            <option value="create">Create</option>
+            <option value="update">Update</option>
+            <option value="delete">Delete</option>
         </select>
 
-        <label for="code">escolha o produto</label>
+        <label for="code">Escolha o produto</label>
         <input type="text" id="code" required>
-        <button type="submit">confirmar</button>
+        <button type="submit">Confirmar</button>
     </form>
 </div>
 <div id="LabelLista">
-    <h3>produtos catalogados:</h3>
+    <h3>Produtos Catalogados:</h3>
 </div>
 <div id="Lista"></div>
+
+<script>
+    function fetchAndDisplayProducts() {
+        fetch('http://localhost:8080/Product')
+            .then(response => response.json())
+            .then(data => {
+                const listaDiv = document.getElementById('Lista');
+                listaDiv.innerHTML = '';
+
+                data.forEach(product => {
+                    const productDiv = document.createElement('div');
+                    productDiv.textContent = `ID: ${product.code}, Nome: ${product.name}, Preço: ${product.price}`;
+                    listaDiv.appendChild(productDiv);
+                });
+            })
+            .catch(error => console.error('Erro:', error));
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        fetchAndDisplayProducts();
+    });
+
+
+    document.getElementById('operation').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const selectedOperation = document.getElementById('operationSelect').value;
+
+
+        if (selectedOperation === 'findAll') {
+            fetchAndDisplayProducts();
+        }
+    });
+</script>
 
 </body>
 </html>
