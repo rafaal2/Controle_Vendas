@@ -8,14 +8,15 @@
     <title>Controle de vendas</title>
 </head>
 <body>
-<h2>Crud para controle de vendas</h2>
+<h2>Crud for stock control</h2>
 
 <div class="entradaDados">
-    <h2>Test Test</h2>
+    <h2>api integration</h2>
     <form id="operation">
         <label for="operation">Escolha a operação:</label>
         <select id="operationSelect">
-            <option value="findAll">Read</option>
+            <option value="find">show all</option>
+            <option value="findbyid">search</option>
             <option value="create">Create</option>
             <option value="update">Update</option>
             <option value="delete">Delete</option>
@@ -25,45 +26,23 @@
         <input type="text" id="code" required>
         <button type="submit">Confirmar</button>
     </form>
+<div class="hiddenForm">
+    <label for="name">Name: </label>
+    <input type="text" id="name" required>
+    <label for="price">Price: </label>
+    <input type="text" id="price" required>
+    <label for="quantity">Quantity: </label>
+    <input type="text" id="quantity" required>
+</div>
+
 </div>
 <div id="LabelLista">
     <h3>Produtos Catalogados:</h3>
 </div>
 <div id="Lista"></div>
 
-<script>
-    function fetchAndDisplayProducts() {
-        fetch('http://localhost:8080/Product')
-            .then(response => response.json())
-            .then(data => {
-                const listaDiv = document.getElementById('Lista');
-                listaDiv.innerHTML = '';
-
-                data.forEach(product => {
-                    const productDiv = document.createElement('div');
-                    productDiv.textContent = `ID: ${product.code}, Nome: ${product.name}, Preço: ${product.price}`;
-                    listaDiv.appendChild(productDiv);
-                });
-            })
-            .catch(error => console.error('Erro:', error));
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        fetchAndDisplayProducts();
-    });
-
-
-    document.getElementById('operation').addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        const selectedOperation = document.getElementById('operationSelect').value;
-
-
-        if (selectedOperation === 'findAll') {
-            fetchAndDisplayProducts();
-        }
-    });
-</script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
+
