@@ -47,7 +47,7 @@ ProductRepository repository;
     }
     public void delete(Long code) {
 
-        logger.info("Deleting one PersonVo!");
+        logger.info("Deleting one Product!");
 
         var entity  = repository.findById(code).orElseThrow(() -> new ResourceNotFoundException("not found"));
 

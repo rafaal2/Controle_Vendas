@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
 @RequestMapping("/Product")
+
 public class ProductController {
 
         @Autowired
         private ProductServices service;
-        ///private PersonVoServices service = new PersonVoServices();
-        //
+
         @CrossOrigin
     @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
     public List<Product> findAll() {
@@ -28,14 +28,15 @@ public class ProductController {
         }	@PostMapping(
                 consumes = {MediaType.APPLICATION_JSON_VALUE},
                 produces = {MediaType.APPLICATION_JSON_VALUE})
-        public Product create(@RequestBody Product PersonVo) {
-            return service.create(PersonVo);
+        public Product create(@RequestBody Product product) {
+            return service.create(product);
         }
+
 
         @PutMapping(consumes = {MediaType.APPLICATION_JSON_VALUE},
                 produces = {MediaType.APPLICATION_JSON_VALUE})
-        public Product update(@RequestBody Product PersonVo) {
-            return service.update(PersonVo);
+        public Product update(@RequestBody Product product) {
+            return service.update(product);
         }
 
 
