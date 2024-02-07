@@ -21,5 +21,5 @@ Este é um projeto de controle de vendas que permite gerenciar produtos em um es
 - JavaScript
 - Postman
 
-![Demostração]([caminho/para/a/imagem](https://github.com/rafaal2/Controle_Vendas/blob/main/Captura%20de%20Tela%20(152).png?raw=true))
+![Demostração]((https://github.com/rafaal2/Controle_Vendas/blob/main/Captura%20de%20Tela%20(152).png?raw=true))
 
