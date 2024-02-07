@@ -21,12 +21,13 @@
             <option value="update">Update</option>
             <option value="delete">Delete</option>
         </select>
-
-        <label for="code">Escolha o produto</label>
-        <input type="text" id="code" required>
+    </form>
+    <form id="codeEntry" class="hidden2">
+        <label for="code">Escolha o numero do produto: </label>
+        <input type="text" id="code" required >
         <button type="submit">Confirmar</button>
     </form>
-<div class="hiddenForm">
+<div id="hiddenForm" class="hidden">
     <label for="name">Name: </label>
     <input type="text" id="name" required>
     <label for="price">Price: </label>
