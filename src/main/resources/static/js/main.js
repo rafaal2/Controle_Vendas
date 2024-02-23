@@ -1,3 +1,6 @@
+function downloadPdf(){
+    fetch('http://localhost:8080/Product/pdf')
+}
 function showProducts() {
     fetch('http://localhost:8080/Product')
         .then(response => response.json())
@@ -150,8 +153,14 @@ document.getElementById('operationSelect').addEventListener('change', function (
     } else {
         hiddenForm.classList.add('hidden');
     }
-});
+   });
 
 document.addEventListener('DOMContentLoaded', function () {
     showProducts();
 });
+
+document.getElementById('download').addEventListener('click', function (event) {
+    event.preventDefault();
+    window.location.href = 'http://localhost:8080/Product/pdf';
+});
+
