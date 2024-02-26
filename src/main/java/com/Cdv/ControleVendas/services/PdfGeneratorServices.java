@@ -33,6 +33,7 @@ public class PdfGeneratorServices {
         document.add(paragraph);
         List<Product> productList = findAll();
 
+
         for (Product product : productList) {
             Paragraph textParagraph = new Paragraph(product.toString(), fontText);
             textParagraph.setAlignment(Paragraph.ALIGN_LEFT);

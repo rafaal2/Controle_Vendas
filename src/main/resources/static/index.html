@@ -5,49 +5,45 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Controle de vendas</title>
+    <title>Controle de estoque(API)</title>
 </head>
 <body>
-<h2>controle de vendas</h2>
+<h2>Controle de estoque(API)</h2>
 
 <div class="entradaDados">
-    <h2>em desenvolvimento(download pdf)
-        <button id="download" type="button" href="http://localhost:8080/Product/pdf">download pdf</button></h2>
+    <h2>download do PDF com os itens</h2>
+    <button id="download" type="button" href="http://localhost:8080/Product/pdf">Download PDF</button>
     <form id="operation">
         <label for="operation">Escolha a operação:</label>
         <select id="operationSelect">
-            <option value="find">show all</option>
-            <option value="findbyid">search</option>
-            <option value="create">Create</option>
-            <option value="update">Update</option>
-            <option value="delete">Delete</option>
+            <option value="find">Mostrar todos</option>
+            <option value="findbyid">Buscar</option>
+            <option value="create">Criar</option>
+            <option value="update">Atualizar</option>
+            <option value="delete">Deletar</option>
         </select>
         <button type="submit">Confirmar</button>
     </form>
     <form id="codeEntry" class="hidden2">
-        <label for="code">Escolha o numero do produto: </label>
-        <input type="text" id="code" required >
+        <label for="code">Escolha o número do produto:</label>
+        <input type="text" id="code" required>
     </form>
-<div id="hiddenForm" class="hidden">
-    <label for="name">Name: </label>
-    <input type="text" id="name" required>
-    <label for="price">Price: </label>
-    <input type="text" id="price" required>
-    <label for="quantity">Quantity: </label>
-    <input type="text" id="quantity" required>
+    <div id="hiddenForm" class="hidden">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" required>
+        <label for="price">Preço:</label>
+        <input type="text" id="price" required>
+        <label for="quantity">Quantidade:</label>
+        <input type="text" id="quantity" required>
+    </div>
 </div>
 
-</div>
 <div id="LabelLista">
     <h3>Produtos Catalogados:</h3>
 </div>
 <div id="Lista"></div>
-<div>
-
-</div>
 
 <script src="js/main.js"></script>
 
 </body>
 </html>
-
