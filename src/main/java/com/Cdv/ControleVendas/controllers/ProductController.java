@@ -25,7 +25,8 @@ public class ProductController {
         @GetMapping(value = "/{code}", produces = {MediaType.APPLICATION_JSON_VALUE})
         public Product findById(@PathVariable(value = "code") Long code) {
             return service.finById(code);
-        }	@PostMapping(
+        }
+        @PostMapping(
                 consumes = {MediaType.APPLICATION_JSON_VALUE},
                 produces = {MediaType.APPLICATION_JSON_VALUE})
         public Product create(@RequestBody Product product) {
